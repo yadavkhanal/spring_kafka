@@ -286,3 +286,7 @@ This system implements a real-world distributed transaction model using:
 | ✔ Microservice Decoupling  | Independent deployability per service       |
 
 It demonstrates how large-scale systems maintain consistency **without** distributed locks or 2PC, using modern cloud-native design principles.
+
+👨‍💻 Author
+Yadav Khanal
+Staff Software Engineer | Backend & AI Systems
