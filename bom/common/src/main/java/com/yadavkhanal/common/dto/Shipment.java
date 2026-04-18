@@ -1,14 +1,17 @@
 package com.yadavkhanal.common.dto;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 public class Shipment {
     private UUID id;
     private UUID orderId;
     private UUID paymentId;
 
-    public Shipment() {
-    }
 
     public Shipment(UUID id, UUID orderId, UUID paymentId) {
         this.id = id;
@@ -18,30 +21,6 @@ public class Shipment {
 
     public Shipment(UUID orderId, UUID paymentId) {
         this.orderId = orderId;
-        this.paymentId = paymentId;
-    }
-
-    public UUID getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(UUID orderId) {
-        this.orderId = orderId;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public UUID getPaymentId() {
-        return paymentId;
-    }
-
-    public void setPaymentId(UUID paymentId) {
         this.paymentId = paymentId;
     }
 }
