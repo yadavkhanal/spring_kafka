@@ -1,42 +1,16 @@
 package com.yadavkhanal.common.dto.commands;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ReserveProductCommand {
     private UUID productId;
     private Integer productQuantity;
     private UUID orderId;
-
-    public ReserveProductCommand() {
-    }
-
-    public ReserveProductCommand(UUID productId, Integer productQuantity, UUID orderId) {
-        this.productId = productId;
-        this.productQuantity = productQuantity;
-        this.orderId = orderId;
-    }
-
-    public UUID getProductId() {
-        return productId;
-    }
-
-    public void setProductId(UUID productId) {
-        this.productId = productId;
-    }
-
-    public Integer getProductQuantity() {
-        return productQuantity;
-    }
-
-    public void setProductQuantity(Integer productQuantity) {
-        this.productQuantity = productQuantity;
-    }
-
-    public UUID getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(UUID orderId) {
-        this.orderId = orderId;
-    }
 }

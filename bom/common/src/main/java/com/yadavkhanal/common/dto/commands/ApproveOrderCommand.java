@@ -1,22 +1,14 @@
 package com.yadavkhanal.common.dto.commands;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ApproveOrderCommand {
     private UUID orderId;
-
-    public ApproveOrderCommand() {
-    }
-
-    public ApproveOrderCommand(UUID orderId) {
-        this.orderId = orderId;
-    }
-
-    public UUID getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(UUID orderId) {
-        this.orderId = orderId;
-    }
 }
