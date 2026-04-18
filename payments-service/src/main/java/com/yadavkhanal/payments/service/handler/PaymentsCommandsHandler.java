@@ -52,4 +52,5 @@ public class PaymentsCommandsHandler {
             kafkaTemplate.send(paymentEventsTopicName,paymentFailedEvent);
         }
     }
+
 }

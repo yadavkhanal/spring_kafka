@@ -1,22 +1,14 @@
 package com.yadavkhanal.common.dto.commands;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RejectOrderCommand {
     private UUID orderId;
-
-    public RejectOrderCommand() {
-    }
-
-    public RejectOrderCommand(UUID orderId) {
-        this.orderId = orderId;
-    }
-
-    public UUID getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(UUID orderId) {
-        this.orderId = orderId;
-    }
 }

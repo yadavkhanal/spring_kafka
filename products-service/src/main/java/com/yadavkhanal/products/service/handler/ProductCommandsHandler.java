@@ -1,6 +1,8 @@
 package com.yadavkhanal.products.service.handler;
 
 import com.yadavkhanal.common.dto.Product;
+import com.yadavkhanal.common.dto.commands.CancelProductReservationCommand;
+import com.yadavkhanal.common.dto.commands.ProductReservationCancelledEvent;
 import com.yadavkhanal.common.dto.commands.ReserveProductCommand;
 import com.yadavkhanal.common.dto.events.ProductReservationFailedEvent;
 import com.yadavkhanal.common.dto.events.ProductReservedEvent;
@@ -48,5 +50,16 @@ public class ProductCommandsHandler {
                     command.getOrderId(), command.getProductQuantity());
             kafkaTemplate.send(productEventsTopicName, productReservationFailedEvent);
         }
+    }
+
+    @KafkaHandler
+    public void handleCommand(@Payload CancelProductReservationCommand command) {
+        Product productToCancel = new Product(command.getProductId(), command.getProductQuantity());
+        productService.cancelReservation(productToCancel, command.getOrderId());
+        ProductReservationCancelledEvent productReservationCancelledEvent = new ProductReservationCancelledEvent(command.getOrderId(),command.getOrderId());
+        kafkaTemplate.send(productEventsTopicName, productReservationCancelledEvent);
+
+
+
     }
 }
