@@ -233,6 +233,9 @@ Each service contains:
 
 ---
 
+To run kafka in docker, run from the folder where the docker-compose.yml is located.
+docker-compose --env-file environment.env up -d
+
 ## 🚀 Real-World Use Cases
 
 This architecture is widely used in:
