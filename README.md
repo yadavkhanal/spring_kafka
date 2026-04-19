@@ -224,6 +224,8 @@ saga-system/
 ```
 ![saga_flow_diagram.png](saga_flow_diagram.png)
 
+![saga orchestration flow.png](saga%20orchestration%20flow.png)
+
 Each service contains:
 
 - Kafka producers
